@@ -29,7 +29,9 @@
     "typescript" : "4.7.4"
   },
   "dependencies" : {
-    "fp-ts" : "2.12.2",
-    "newtype-ts" : "0.3.5"
+
+  },
+  "peerDependencies": {
+    "fp-ts" : "2.*"
   }
 }
