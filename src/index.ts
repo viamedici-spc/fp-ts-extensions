@@ -1,0 +1,30 @@
+export * as T from "./extensions/Task";
+export * as E from "./extensions/Either";
+export * as TE from "./extensions/TaskEither";
+export * as O from "./extensions/Option";
+export * as TO from "./extensions/TaskOption";
+export * as I from "./extensions/Identity";
+export * as S from "./extensions/Set";
+export * as RS from "./extensions/ReadonlySet";
+export * as TH from "./extensions/These";
+export * as TTH from "./extensions/TaskThese";
+export * as TP from "./extensions/Tuple";
+export * as RTP from "./extensions/ReadonlyTuple";
+export * as M from "./extensions/Map";
+export * as RM from "./extensions/ReadonlyMap";
+export * as MM from "./extensions/Magma";
+export * as P from "./extensions/Predicate";
+export * as A from "./extensions/Array";
+export * as RA from "./extensions/ReadonlyArray";
+export * as NEA from "./extensions/NonEmptyArray";
+export * as RNEA from "./extensions/ReadonlyNonEmptyArray";
+export * as R from "./extensions/Record";
+export * as RR from "./extensions/ReadonlyRecord";
+
+export * as Eq from "./extensions/Eq";
+export * as Ord from "./extensions/Ord";
+
+export * as Bool from "./extensions/boolean";
+export * as Str from "./extensions/string";
+export * as Num from "./extensions/number";
+export * from "./extensions/function";

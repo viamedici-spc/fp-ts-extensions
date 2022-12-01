@@ -1,0 +1,9 @@
+include:
+  - project: 'misc/citemplates'
+    ref: "1.0"
+    file: '/templates/pipelines/.gitlab-ci-template-base.yml'
+
+build:npm:client:
+  extends: .build_npm
+  variables:
+    BUILD_VERBS: "build:release"
