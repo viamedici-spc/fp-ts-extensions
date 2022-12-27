@@ -1,37 +1,37 @@
 {
-  "name" : "@viamedici/fp-ts-extensions",
-  "version" : "0.1.0",
-  "description" : "",
-  "main" : "./index.js",
-  "types" : "./index.d.ts",
-  "module" : "./index.js",
-  "scripts" : {
-    "test" : "jest --runInBand",
-    "build:release" : "tsc -p ./tsconfig.build.json",
-    "build" : "tsc"
+  "name": "@viamedici/fp-ts-extensions",
+  "version": "0.1.0",
+  "description": "",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "module": "./index.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "postinstall": "npm-sort"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "git+https://git.ceventis.de/xyz"
+  "repository": {
+    "type": "git",
+    "url": "git+https://git.ceventis.de/viamedici/common/fp-ts-extensions"
   },
-  "keywords" : [
+  "keywords": [
     "viamedici",
     "fp-ts"
   ],
-  "author" : "Viamedici",
-  "license" : "TBD",
-  "devDependencies" : {
-    "@types/jest" : "28.1.6",
-    "jest" : "^28.1.3",
-    "jest-extended" : "^3.0.1",
-    "jest-stare" : "^2.4.1",
-    "ts-jest" : "^28.0.7",
-    "typescript" : "4.7.4"
+  "author": "Viamedici",
+  "license": "TBD",
+  "devDependencies": {
+    "@types/jest": "28.1.6",
+    "jest": "^28.1.3",
+    "jest-extended": "^3.0.1",
+    "jest-stare": "^2.4.1",
+    "npm-sort": "0.0.4",
+    "ts-jest": "^28.0.7",
+    "typescript": "4.7.4"
   },
-  "dependencies" : {
-
-  },
+  "dependencies": {},
   "peerDependencies": {
-    "fp-ts" : "2.*"
+    "fp-ts": "2.*"
   }
 }

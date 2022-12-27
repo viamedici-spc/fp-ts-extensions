@@ -5,5 +5,3 @@ include:
 
 build:npm:lib:
   extends: .build_npm
-  variables:
-    BUILD_VERBS: "build:release"
