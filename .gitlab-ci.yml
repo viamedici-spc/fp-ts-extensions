@@ -5,3 +5,5 @@ include:
 
 build:
   extends: .build_npm
+  variables:
+    BUILD_VERBS: "build test"
