@@ -3,5 +3,5 @@ include:
     ref: "1.0"
     file: '/templates/pipelines/.gitlab-ci-template-base.yml'
 
-build:npm:lib:
+build:
   extends: .build_npm
