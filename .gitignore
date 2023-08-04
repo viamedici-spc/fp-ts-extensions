@@ -1,4 +1,6 @@
-.idea
+/**/.idea
 node_modules
 /**/dist
 test-results
+/**/build
+/report/

@@ -1,4 +1,5 @@
 import {Num} from "../src";
+import {describe, it, expect} from "vitest";
 
 describe("Numeric tests", () => {
     it("Determine decimal places", () => {

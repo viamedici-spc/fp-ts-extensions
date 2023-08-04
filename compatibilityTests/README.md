@@ -1,0 +1,1 @@
+Für den CommonJs Test ist in der `tsconfig.json` die Property `module` auf `CommonJs` gestellt. Dadurch wird der `*.umd.js` Build aus dem npm Paket verwendet.

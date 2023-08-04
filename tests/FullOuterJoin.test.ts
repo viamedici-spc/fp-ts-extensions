@@ -1,4 +1,5 @@
 import {A, Str} from "../src"
+import {describe, it, expect} from "vitest";
 
 describe("FullOuterJoin tests", () => {
     it("Single element in A", () => {

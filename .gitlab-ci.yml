@@ -1,10 +1,10 @@
 include:
   - project: 'misc/citemplates'
-    ref: "1.0"
+    ref: "feature/npm-update"
     file: '/templates/pipelines/.gitlab-ci-template-base.yml'
 
 build:
   extends: .build_npm
   variables:
-    BUILD_VERBS: "build test"
+    BUILD_VERBS: "test build"
     NODE_VERSION: "18"
