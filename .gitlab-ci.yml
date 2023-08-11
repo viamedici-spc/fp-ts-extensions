@@ -1,6 +1,6 @@
 include:
   - project: 'misc/citemplates'
-    ref: "feature/npm-update"
+    ref: "1.0"
     file: '/templates/pipelines/.gitlab-ci-template-base.yml'
 
 build:
