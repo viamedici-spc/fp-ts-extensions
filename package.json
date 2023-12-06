@@ -1,5 +1,5 @@
 {
-  "name": "@viamedici/fp-ts-extensions",
+  "name": "@viamedici-spc/fp-ts-extensions",
   "version": "0.0.0",
   "description": "",
   "sideEffects": false,
