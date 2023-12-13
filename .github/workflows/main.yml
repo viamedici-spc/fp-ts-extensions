@@ -1,6 +1,6 @@
 name: Build Npm
 
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   build-npm:
