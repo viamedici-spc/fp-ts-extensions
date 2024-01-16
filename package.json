@@ -1,0 +1,194 @@
+{
+  "name": "@viamedici-spc/fp-ts-extensions",
+  "version": "0.0.0",
+  "description": "Extensions for fp-ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/viamedici-spc/fp-ts-extensions.git"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./Array": {
+      "types": "./dist/Array.d.ts",
+      "import": "./dist/Array.js",
+      "require": "./dist/Array.cjs"
+    },
+    "./Either": {
+      "types": "./dist/Either.d.ts",
+      "import": "./dist/Either.js",
+      "require": "./dist/Either.cjs"
+    },
+    "./Eq": {
+      "types": "./dist/Eq.d.ts",
+      "import": "./dist/Eq.js",
+      "require": "./dist/Eq.cjs"
+    },
+    "./Identity": {
+      "types": "./dist/Identity.d.ts",
+      "import": "./dist/Identity.js",
+      "require": "./dist/Identity.cjs"
+    },
+    "./Magma": {
+      "types": "./dist/Magma.d.ts",
+      "import": "./dist/Magma.js",
+      "require": "./dist/Magma.cjs"
+    },
+    "./Map": {
+      "types": "./dist/Map.d.ts",
+      "import": "./dist/Map.js",
+      "require": "./dist/Map.cjs"
+    },
+    "./Monoid": {
+      "types": "./dist/Monoid.d.ts",
+      "import": "./dist/Monoid.js",
+      "require": "./dist/Monoid.cjs"
+    },
+    "./NonEmptyArray": {
+      "types": "./dist/NonEmptyArray.d.ts",
+      "import": "./dist/NonEmptyArray.js",
+      "require": "./dist/NonEmptyArray.cjs"
+    },
+    "./Option": {
+      "types": "./dist/Option.d.ts",
+      "import": "./dist/Option.js",
+      "require": "./dist/Option.cjs"
+    },
+    "./Ord": {
+      "types": "./dist/Ord.d.ts",
+      "import": "./dist/Ord.js",
+      "require": "./dist/Ord.cjs"
+    },
+    "./Predicate": {
+      "types": "./dist/Predicate.d.ts",
+      "import": "./dist/Predicate.js",
+      "require": "./dist/Predicate.cjs"
+    },
+    "./ReadonlyArray": {
+      "types": "./dist/ReadonlyArray.d.ts",
+      "import": "./dist/ReadonlyArray.js",
+      "require": "./dist/ReadonlyArray.cjs"
+    },
+    "./ReadonlyMap": {
+      "types": "./dist/ReadonlyMap.d.ts",
+      "import": "./dist/ReadonlyMap.js",
+      "require": "./dist/ReadonlyMap.cjs"
+    },
+    "./ReadonlyNonEmptyArray": {
+      "types": "./dist/ReadonlyNonEmptyArray.d.ts",
+      "import": "./dist/ReadonlyNonEmptyArray.js",
+      "require": "./dist/ReadonlyNonEmptyArray.cjs"
+    },
+    "./ReadonlyRecord": {
+      "types": "./dist/ReadonlyRecord.d.ts",
+      "import": "./dist/ReadonlyRecord.js",
+      "require": "./dist/ReadonlyRecord.cjs"
+    },
+    "./ReadonlySet": {
+      "types": "./dist/ReadonlySet.d.ts",
+      "import": "./dist/ReadonlySet.js",
+      "require": "./dist/ReadonlySet.cjs"
+    },
+    "./ReadonlyTuple": {
+      "types": "./dist/ReadonlyTuple.d.ts",
+      "import": "./dist/ReadonlyTuple.js",
+      "require": "./dist/ReadonlyTuple.cjs"
+    },
+    "./Record": {
+      "types": "./dist/Record.d.ts",
+      "import": "./dist/Record.js",
+      "require": "./dist/Record.cjs"
+    },
+    "./Set": {
+      "types": "./dist/Set.d.ts",
+      "import": "./dist/Set.js",
+      "require": "./dist/Set.cjs"
+    },
+    "./Task": {
+      "types": "./dist/Task.d.ts",
+      "import": "./dist/Task.js",
+      "require": "./dist/Task.cjs"
+    },
+    "./TaskEither": {
+      "types": "./dist/TaskEither.d.ts",
+      "import": "./dist/TaskEither.js",
+      "require": "./dist/TaskEither.cjs"
+    },
+    "./TaskOption": {
+      "types": "./dist/TaskOption.d.ts",
+      "import": "./dist/TaskOption.js",
+      "require": "./dist/TaskOption.cjs"
+    },
+    "./TaskThese": {
+      "types": "./dist/TaskThese.d.ts",
+      "import": "./dist/TaskThese.js",
+      "require": "./dist/TaskThese.cjs"
+    },
+    "./These": {
+      "types": "./dist/These.d.ts",
+      "import": "./dist/These.js",
+      "require": "./dist/These.cjs"
+    },
+    "./Tuple": {
+      "types": "./dist/Tuple.d.ts",
+      "import": "./dist/Tuple.js",
+      "require": "./dist/Tuple.cjs"
+    },
+    "./boolean": {
+      "types": "./dist/boolean.d.ts",
+      "import": "./dist/boolean.js",
+      "require": "./dist/boolean.cjs"
+    },
+    "./function": {
+      "types": "./dist/function.d.ts",
+      "import": "./dist/function.js",
+      "require": "./dist/function.cjs"
+    },
+    "./number": {
+      "types": "./dist/number.d.ts",
+      "import": "./dist/number.js",
+      "require": "./dist/number.cjs"
+    },
+    "./string": {
+      "types": "./dist/string.d.ts",
+      "import": "./dist/string.js",
+      "require": "./dist/string.cjs"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "tsc -p ./tsconfig.test.json --noEmit && vitest run",
+    "test:watch": "vitest watch --reporter default",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "npm-sort"
+  },
+  "keywords": [
+    "viamedici",
+    "fp-ts",
+    "extensions"
+  ],
+  "author": "Viamedici Software GmbH",
+  "license": "MIT",
+  "devDependencies": {
+    "@vitest/coverage-istanbul": "^0.34.1",
+    "npm-sort": "^0.0.4",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.8",
+    "vite-plugin-checker": "^0.6.1",
+    "vite-plugin-dts": "^3.5.0",
+    "vitest": "^0.34.1"
+  },
+  "peerDependencies": {
+    "fp-ts": "2.*"
+  }
+}
