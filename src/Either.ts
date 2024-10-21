@@ -5,6 +5,9 @@ import {bind, Do, Either, map, swap} from "fp-ts/Either";
 import {pipe} from "fp-ts/function";
 import * as A from "fp-ts/Array";
 
+export type ExtractEitherLeftType<T extends Either<any, any>> = T extends Either<infer E, any> ? E : never;
+export type ExtractEitherRightType<T extends Either<any, any>> = T extends Either<any, infer A> ? A : never;
+
 export function chainFirstIOK<A, B>(f: (a: A) => IO<B>) {
     return <E>(e: Either<E, A>) => pipe(
         e,

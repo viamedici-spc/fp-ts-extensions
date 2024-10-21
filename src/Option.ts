@@ -6,6 +6,8 @@ import {Option} from "fp-ts/Option";
 import {pipe} from "fp-ts/function";
 import * as A from "fp-ts/Array";
 
+export type ExtractOptionType<T extends Option<any>> = T extends Option<infer A> ? A : never;
+
 export function chainFirstIOK<A, B>(f: (a: A) => IO<B>) {
     return (o: Option<A>) =>
         pipe(o,
