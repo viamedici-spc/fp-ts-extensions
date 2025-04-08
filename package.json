@@ -170,7 +170,7 @@
     "test": "tsc -p ./tsconfig.test.json --noEmit && vitest run",
     "test:watch": "vitest watch --reporter default",
     "typecheck": "tsc --noEmit",
-    "postinstall": "which npm-sort && npm-sort"
+    "prepare": "npm-sort"
   },
   "keywords": [
     "viamedici",
