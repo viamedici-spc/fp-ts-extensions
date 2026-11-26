@@ -28,8 +28,9 @@ const firstEven = pipe(
 
 ## Supported environments
 
-The package is **ESM only** and made for **browsers**, through a bundler (Vite, webpack 5, Rollup, esbuild, …) or as part
-of a bundle loaded from a CDN. Node.js is not a supported runtime.
+The package is **ESM only** and made for **browsers**, through a bundler (Vite, webpack 5, Rollup, esbuild, …) or as
+part of a bundle loaded from a CDN. Node.js is not a supported runtime. TypeScript resolves it with `moduleResolution`
+`bundler`, `node16` or `nodenext`.
 
 ## Testing with Vitest
 
