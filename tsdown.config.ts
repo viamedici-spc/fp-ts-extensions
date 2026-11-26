@@ -52,6 +52,8 @@ const config: UserConfig = defineConfig({
     unbundle: true,
     dts: false,
     exports: true,
+    // Every dependency stays external: a package bundled by accident fails the build.
+    deps: {onlyBundle: []},
     plugins: [fullySpecifiedFpTs, isolatedDeclarations],
 });
 
