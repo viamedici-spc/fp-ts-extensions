@@ -58,3 +58,24 @@ else, so it can be neither decided nor planned.
 - **What it would buy:** one tool less, and `.oxlintrc.json` read by Bun if it stays compatible.
 - **Upstream:** Bun release notes.
 - **Last checked:** Bun 1.4.5, 2026-11-26: not available.
+
+## tsdown
+
+### Let tsdown generate the declarations
+
+- **We would rather** use tsdown's own declaration output (`dts: {generator: "oxc"}`).
+- **We do instead** emit one declaration file per module with Oxc's isolated declarations, in a small plugin in
+  `tsdown.config.ts`.
+- **What blocks it:** tsdown's declaration bundling (rolldown-plugin-dts) drops what a module re-exports with
+  `export * from "fp-ts/…"` once that module is re-exported as a namespace (`export * as O from "./Option"`), so
+  `O.isSome` is missing from the declarations while the JavaScript has it.
+- **Check** (after switching `tsdown.config.ts` back to `dts: {generator: "oxc"}` and building, a count above 0 means
+  the namespace carries fp-ts's exports again):
+
+  ```bash
+  bun run build && grep -c "isSome" dist/Option.d.ts
+  ```
+
+- **What it would buy:** the plugin in `tsdown.config.ts` and the explicit `rolldown` dev dependency go away.
+- **Upstream:** not reported.
+- **Last checked:** tsdown 0.23.7, 2026-11-26: the fp-ts exports are missing.
