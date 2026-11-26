@@ -90,7 +90,8 @@ whether the new tests discriminate.
 
 A unit suite with fakes and a suite against the real engine fail on different defects: the fake encodes what we believe
 the engine does. **When a fix concerns the engine's behavior, ask what the fake cannot produce**, and cover that against
-the engine where a test can reach it.
+the engine where a test can reach it. This library has no suite against the engine; its tests are unit tests of its own
+functions.
 
 ## Measure a claim about somebody else's software, and about your own
 

@@ -50,7 +50,8 @@ runs the wrong runner.
   function states its return type and an exported constant its type. The type checker enforces it; the point is that the
   declaration a consumer reads is the one written, not an inferred one that changes with the implementation.
 - **No wire types through the entry point.** Generated client types stay behind the mapping layer; a consumer sees only
-  the library's own domain types.
+  the library's own domain types. This library has no generated client and no mapping layer, so the rule has nothing to
+  apply to here.
 - **ESM only, browser only.** No `node:*` imports, no `process`, no `Buffer`, nothing that needs a Node.js runtime. A
   module's top level does not touch `window`, `document` or other browser globals, so importing it during a
   server-side render does not throw; the work starts when the client calls in.
@@ -124,13 +125,15 @@ return match(decision)
 **What it does not replace:** a two-member union inside one function that never leaves it. The test is whether a reader
 elsewhere has to be told about a new member.
 
+This library does not depend on ts-pattern and has no union of its own to consume; the rule applies when it gets one.
+
 ## Values and state
 
 - **An optional field is absent or valid.** Never an empty string or an empty array standing for "none". Where a public
   type admits `null` beside `undefined`, `null` has a meaning of its own (a reset, say) and TSDoc states it.
 - **Don't store what's derivable.** A value that is always determined by another (a label from a type, a flag from a
   state) is computed, not kept beside its source: a derived atom or a selector, never a second atom written in step.
-  One source of truth cannot drift.
+  One source of truth cannot drift. This library has no atoms; the rule holds for any value kept beside its source.
 
 ## Dependencies between the libraries
 
