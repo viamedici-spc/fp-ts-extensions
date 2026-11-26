@@ -14,5 +14,7 @@
 
 # Fixes
 
+## Installation and exports
+
 - **Installing with npm works again:** the package no longer runs a `postinstall` script that failed for consumers.
 - **The `./function` subpath resolves:** it pointed to files the build did not produce.
