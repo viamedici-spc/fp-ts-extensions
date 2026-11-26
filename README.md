@@ -48,7 +48,9 @@ export default defineConfig({
 });
 ```
 
-`bun test` and the bundlers (Vite, webpack 5, Rollup, esbuild) need no such setting.
+`bun test` and the bundlers (Vite, webpack 5, Rollup, esbuild) need no such setting. Outside a bundler, e.g. under
+`bun test`, an application's own `fp-ts/…` imports and this package's can load two copies of fp-ts; compare `Option`
+and `Either` values by their `_tag`, not by identity with `O.none`.
 
 ## Documentation
 
