@@ -169,8 +169,7 @@
     "build": "vite build",
     "test": "tsc -p ./tsconfig.test.json --noEmit && vitest run",
     "test:watch": "vitest watch --reporter default",
-    "typecheck": "tsc --noEmit",
-    "postinstall": "npm-sort"
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [
     "viamedici",
@@ -179,9 +178,9 @@
   ],
   "author": "Viamedici Software GmbH",
   "license": "MIT",
+  "packageManager": "bun@1.4.5",
   "devDependencies": {
     "@vitest/coverage-istanbul": "^0.34.1",
-    "npm-sort": "^0.0.4",
     "typescript": "^5.1.6",
     "vite": "^4.4.8",
     "vite-plugin-checker": "^0.6.1",
