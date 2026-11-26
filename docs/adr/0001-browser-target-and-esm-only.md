@@ -26,8 +26,8 @@ by their full path (`fp-ts/es6/Option.js`); the declarations keep `fp-ts/Option`
 ## Consequences
 
 - No CommonJS build: `require` of the package is not supported, nor are bundlers without ES module support.
-- Importing the package in plain Node.js fails at fp-ts's ES files, which Node.js does not treat as ES modules. Tests
-  run in Bun, whose resolver handles them.
+- Importing the package in plain Node.js fails: Node.js loads fp-ts's ES files, but cannot resolve their imports, which
+  have no file extension. Tests run in Bun, whose resolver handles them.
 - webpack 5, Vite, Rollup and esbuild resolve the output without configuration.
 - A consumer's own `fp-ts/Option` and the package's `fp-ts/es6/Option.js` are the same file in a bundler, so there is
   one fp-ts instance.
