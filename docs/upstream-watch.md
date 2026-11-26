@@ -49,15 +49,16 @@ else, so it can be neither decided nor planned.
 - **We would rather** lint with Bun itself, as we type-check and format with it.
 - **We do instead** run oxlint (`bun run lint`).
 - **What blocks it:** Bun has no `lint` command yet.
-- **Check** (help text instead of "Script not found" means it exists):
+- **Check** (a line means Bun lists `lint` among its own commands; inside this repository `bun lint` would run the
+  package's `lint` script instead):
 
   ```bash
-  bun lint --help
+  bun --help | grep -w lint
   ```
 
 - **What it would buy:** one tool less, and `.oxlintrc.json` read by Bun if it stays compatible.
 - **Upstream:** Bun release notes.
-- **Last checked:** Bun 1.4.5, 2026-11-26: not available.
+- **Last checked:** Bun 1.4.5, 2026-11-26: no `lint` command.
 
 ## tsdown
 
