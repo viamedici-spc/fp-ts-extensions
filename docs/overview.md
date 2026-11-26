@@ -43,7 +43,7 @@ Browsers, as ESM, through a bundler or inside a bundle loaded from a CDN. Not No
 | Command | What it does |
 |---|---|
 | `bun install` | Installs the dependencies (Bun is the package manager; see `packageManager` in `package.json`). |
-| `bun run verify` | The gate: type check of sources and tests, lint, format check, tests, build, package checks. |
+| `bun run verify` | The gate, its steps in parallel: type check of sources and tests, lint, format check, tests, build with package checks. |
 | `bun run build` | Builds `dist/` and updates the `exports` map. |
 | `bun run test` | Runs the tests with `bun test`. |
 | `bun fmt` | Formats the code. |
