@@ -91,7 +91,7 @@ points and working files, not documents under this lifecycle.
 - **After that, a reversal is append-only:** the old ADR is marked `superseded` and points to its successor, and the new
   decision gets its own number. Its *Alternatives considered* names the overturned position and what overturned it.
 - **While a decision is challenged and not yet re-decided**, the ADR's status goes back to `proposed` and the conflict
-  is registered in [discussion-points.md](../discussion-points.md).
+  is registered in `discussion-points.md`.
 - **A decision text reads as the decision as it now stands.** Never "an earlier version of this ADR said"; the
   superseded position belongs under *Alternatives considered*, or nowhere if it carries nothing forward.
 
@@ -199,8 +199,8 @@ Every substantive change ends with reconciling the documents it affects, **in th
 2. **A behavior a consumer can observe changed?** The feature note that describes it, and the changelog entry.
 3. **A decision that is hard to reverse?** An ADR.
 4. **A supported environment, a command or the toolchain changed?** `overview.md` and `AGENTS.md`.
-5. **A point opened or resolved?** [discussion-points.md](../discussion-points.md). **Decided, not done?**
-   [todo.md](../todo.md). **Later?** [backlog.md](../backlog.md).
+5. **A point opened or resolved?** `discussion-points.md`. **Decided, not done?**
+   [todo.md](../todo.md). **Later?** `backlog.md`.
 6. **Worked around something a dependency cannot do yet?** An entry in [upstream-watch.md](../upstream-watch.md), with
    its check. The workaround still gets its comment where it lives; the entry makes it findable at upgrade time.
 7. **A decision or a mechanism borrowed from elsewhere?** Recorded as below.

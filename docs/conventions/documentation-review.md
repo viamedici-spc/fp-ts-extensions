@@ -13,7 +13,7 @@ compiled against the current API, TSDoc and feature notes are compared with what
 contract with what the entry point exports.
 
 **The output is ephemeral.** A findings list is worked through and then deleted. What survives is the edits it caused
-and any [discussion point](../discussion-points.md) or [to-do](../todo.md) it produced.
+and any discussion point or [to-do](../todo.md) it produced.
 
 ## When to run one
 
@@ -23,7 +23,7 @@ and any [discussion point](../discussion-points.md) or [to-do](../todo.md) it pr
 
 ## The procedure
 
-1. **Prepare:** fix the revision under review, read the [discussion points](../discussion-points.md) and the
+1. **Prepare:** fix the revision under review, read the discussion points and the
    [to-dos](../todo.md) first, so a known open point is not reported as a finding, and run `bun run verify`.
 2. **Split the set into disjoint scopes and audit each against the others and against the code:** the entry points
    (`README.md`, `AGENTS.md`, `overview.md`); TSDoc on the public API; the feature notes; the ADRs; the lists and the
