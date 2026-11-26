@@ -1,6 +1,6 @@
 export * from "fp-ts/number";
 
-import type { Option} from "fp-ts/Option";
+import type {Option} from "fp-ts/Option";
 import {none, some} from "fp-ts/Option";
 import * as A from "fp-ts/Array";
 import {pipe} from "fp-ts/function";
@@ -27,10 +27,10 @@ export function determineDecimalPlaces(...n: number[]): number {
     }
 
     return pipe(
-        n || [] as number[],
+        n || ([] as number[]),
         A.reduce(0, (b, a: number) => {
             const decimalPlaces = countDecimalPLaces(a || 0);
             return Math.max(decimalPlaces, b);
-        })
+        }),
     );
 }

@@ -22,7 +22,7 @@ describe("Option extension tests", () => {
         O.run(incOption)(1);
 
         expect(count).toBe(1);
-    })
+    });
 
     it("run - multiple parameter", () => {
         let str = "";

@@ -10,11 +10,12 @@ export type ExtractOptionType<T extends Option<any>> = T extends Option<infer A>
 
 export function chainFirstIOK<A, B>(f: (a: A) => IO<B>): (o: Option<A>) => Option<A> {
     return (o: Option<A>) =>
-        pipe(o,
+        pipe(
+            o,
             O.map(a => {
                 f(a)();
                 return a;
-            })
+            }),
         );
 }
 
@@ -30,28 +31,32 @@ export function doIfNone<A, B>(f: () => IO<B>): (o: Option<A>) => Option<A> {
 }
 
 export function getOrThrow<A, B extends Error>(f: () => B): (o: Option<A>) => A {
-    return (o: Option<A>) => pipe(
-        o,
-        O.getOrElse<A>(() => {
-            throw f();
-        })
-    );
+    return (o: Option<A>) =>
+        pipe(
+            o,
+            O.getOrElse<A>(() => {
+                throw f();
+            }),
+        );
 }
 
 export function run<A extends unknown[], B>(o: Option<(...args: A) => B>): (...args: A) => Option<(...args: A) => B> {
-    return (...args: A) => pipe(
-        o,
-        doIfSome(fn => () => fn(...args))
-    )
+    return (...args: A) =>
+        pipe(
+            o,
+            doIfSome(fn => () => fn(...args)),
+        );
 }
 
-export const bindM = <D extends Record<string, Option<any>>>(dependencies: D): Option<{ readonly [K in keyof D]: D[K] extends Option<infer O> ? O : any }> =>
-    (pipe(
+export const bindM = <D extends Record<string, Option<any>>>(
+    dependencies: D,
+): Option<{readonly [K in keyof D]: D[K] extends Option<infer O> ? O : any}> =>
+    pipe(
         Object.entries(dependencies),
         A.reduce(O.Do, (b, [k, v]) =>
             pipe(
                 b,
-                O.bind(k, () => v)
-            )
-        )
-    ) as any);
+                O.bind(k, () => v),
+            ),
+        ),
+    ) as any;
