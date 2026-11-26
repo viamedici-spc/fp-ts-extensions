@@ -15,8 +15,9 @@ is the functional base of the SPC client libraries. Start with [docs/overview.md
 
 ## Code
 
-- One file per fp-ts module in `src/`, starting with `export * from "fp-ts/<Module>"`; `src/index.ts` aggregates them.
-  A new module is a new file; the build picks it up and `bun run build` updates the `exports` map in `package.json`.
+- One file per fp-ts module in `src/`, starting with `export * from "fp-ts/<Module>"`; `src/index.ts` aggregates them. A
+  new module is a new file in `src/` plus its `export * as … from "./<Module>"` line in `src/index.ts`; the build picks
+  up the file and updates the `exports` map in `package.json`, and a test checks the line.
 - Exported functions and constants carry explicit types (`isolatedDeclarations`); type-only imports use `import type`.
 - Conventions: [docs/conventions/code.md](docs/conventions/code.md).
 
@@ -46,8 +47,8 @@ before pushing. The full rule is in
 ## Supported environments
 
 - **Browsers only**, as **ESM only**: through a bundler, or inside the configurator-framer bundle from a CDN.
-- **Not Node.js.** Server-side use goes through the engine's REST API, not this library. No `node:*` imports, no
-  `process` or `Buffer` in `src/`.
+- **Not Node.js.** Node.js is not a supported runtime ([ADR 0001](docs/adr/0001-browser-target-and-esm-only.md)). No
+  `node:*` imports, no `process` or `Buffer` in `src/`.
 - **SSR frameworks:** the library runs on the client only; a module's top level touches no browser global.
 
 ## Verification
