@@ -11,8 +11,8 @@ Date: 2026-11-26
 The package is consumed by the SPC client libraries, which run in browsers: through a bundler, or as a self-contained
 bundle loaded from a CDN. Server-side integrations use the configuration engine's REST API directly and do not need
 these libraries. The package used to ship ES modules and CommonJS side by side, without `"type": "module"`, to keep
-webpack 4 and CommonJS consumers working; that made the ES build non-standard and kept consumers asking for plain
-Node.js support.
+webpack 4 and CommonJS consumers working; that made the ES build non-standard, and a consumer reported that it cannot be
+imported in plain Node.js ([issue #2](https://github.com/viamedici-spc/fp-ts-extensions/issues/2)).
 
 fp-ts 2.x has no `exports` map. Strict ESM resolution, as webpack 5 applies it to a `"type": "module"` package, rejects
 an extensionless subpath such as `fp-ts/Option` and needs the full file path.
@@ -41,4 +41,5 @@ by their full path (`fp-ts/es6/Option.js`); the declarations keep `fp-ts/Option`
   CommonJS.
 - **Bundle fp-ts into the package:** would duplicate fp-ts for every consumer that uses it directly, and fp-ts is a peer
   dependency for exactly that reason.
-- **Support Node.js:** would need fp-ts resolved as CommonJS or bundled, for a runtime no consumer of this package uses.
+- **Support Node.js:** would need fp-ts resolved as CommonJS or bundled, for a runtime this package does not target: it
+  serves libraries that target browsers.
