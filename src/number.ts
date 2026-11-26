@@ -1,6 +1,7 @@
 export * from "fp-ts/number";
 
-import {none, Option, some} from "fp-ts/Option";
+import type { Option} from "fp-ts/Option";
+import {none, some} from "fp-ts/Option";
 import * as A from "fp-ts/Array";
 import {pipe} from "fp-ts/function";
 
@@ -14,7 +15,7 @@ export function parseFloatO(value: string): Option<number> {
     return isNaN(int) ? none : some(int);
 }
 
-export function determineDecimalPlaces(...n: number[]) {
+export function determineDecimalPlaces(...n: number[]): number {
     function countDecimalPLaces(n: number) {
         const str = Math.abs(n).toString(10);
         if (str.indexOf(".") !== -1 && str.indexOf("-") !== -1) {

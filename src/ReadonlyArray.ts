@@ -4,7 +4,8 @@ export * from "fp-ts/ReadonlyArray";
 
 import * as RA from "fp-ts/ReadonlyArray";
 import * as O from "fp-ts/Option";
-import {Eq, fromEquals} from "fp-ts/Eq";
+import type {Eq} from "fp-ts/Eq";
+import { fromEquals} from "fp-ts/Eq";
 import {some} from "fp-ts/Option";
 
 export type SingleOrArray<T> = T | ReadonlyArray<T>;

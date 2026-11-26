@@ -1,14 +1,14 @@
 export * from "fp-ts/Option";
 
-import {IO} from "fp-ts/IO";
+import type {IO} from "fp-ts/IO";
 import * as O from "fp-ts/Option";
-import {Option} from "fp-ts/Option";
+import type {Option} from "fp-ts/Option";
 import {pipe} from "fp-ts/function";
 import * as A from "fp-ts/Array";
 
 export type ExtractOptionType<T extends Option<any>> = T extends Option<infer A> ? A : never;
 
-export function chainFirstIOK<A, B>(f: (a: A) => IO<B>) {
+export function chainFirstIOK<A, B>(f: (a: A) => IO<B>): (o: Option<A>) => Option<A> {
     return (o: Option<A>) =>
         pipe(o,
             O.map(a => {
@@ -18,9 +18,9 @@ export function chainFirstIOK<A, B>(f: (a: A) => IO<B>) {
         );
 }
 
-export const doIfSome = chainFirstIOK;
+export const doIfSome: typeof chainFirstIOK = chainFirstIOK;
 
-export function doIfNone<A, B>(f: () => IO<B>) {
+export function doIfNone<A, B>(f: () => IO<B>): (o: Option<A>) => Option<A> {
     return (o: Option<A>) => {
         if (O.isNone(o)) {
             f()();
@@ -29,7 +29,7 @@ export function doIfNone<A, B>(f: () => IO<B>) {
     };
 }
 
-export function getOrThrow<A, B extends Error>(f: () => B) {
+export function getOrThrow<A, B extends Error>(f: () => B): (o: Option<A>) => A {
     return (o: Option<A>) => pipe(
         o,
         O.getOrElse<A>(() => {
@@ -38,7 +38,7 @@ export function getOrThrow<A, B extends Error>(f: () => B) {
     );
 }
 
-export function run<A extends unknown[], B>(o: Option<(...args: A) => B>) {
+export function run<A extends unknown[], B>(o: Option<(...args: A) => B>): (...args: A) => Option<(...args: A) => B> {
     return (...args: A) => pipe(
         o,
         doIfSome(fn => () => fn(...args))

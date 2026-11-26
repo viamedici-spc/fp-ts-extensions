@@ -1,14 +1,15 @@
 export * from "fp-ts/Either";
 
-import {IO} from "fp-ts/IO";
-import {bind, Do, Either, map, swap} from "fp-ts/Either";
+import type {IO} from "fp-ts/IO";
+import type { Either} from "fp-ts/Either";
+import {bind, Do, map, swap} from "fp-ts/Either";
 import {pipe} from "fp-ts/function";
 import * as A from "fp-ts/Array";
 
 export type ExtractEitherLeftType<T extends Either<any, any>> = T extends Either<infer E, any> ? E : never;
 export type ExtractEitherRightType<T extends Either<any, any>> = T extends Either<any, infer A> ? A : never;
 
-export function chainFirstIOK<A, B>(f: (a: A) => IO<B>) {
+export function chainFirstIOK<A, B>(f: (a: A) => IO<B>): <E>(e: Either<E, A>) => Either<E, A> {
     return <E>(e: Either<E, A>) => pipe(
         e,
         map(a => {
@@ -18,9 +19,9 @@ export function chainFirstIOK<A, B>(f: (a: A) => IO<B>) {
     );
 }
 
-export const doIfRight = chainFirstIOK;
+export const doIfRight: typeof chainFirstIOK = chainFirstIOK;
 
-export function doIfLeft<A, B>(f: (a: A) => IO<B>) {
+export function doIfLeft<A, B>(f: (a: A) => IO<B>): <E>(e: Either<A, E>) => Either<A, E> {
     return <E>(e: Either<A, E>) => pipe(
         e,
         swap,
@@ -29,7 +30,7 @@ export function doIfLeft<A, B>(f: (a: A) => IO<B>) {
     );
 }
 
-export function doIfLeftOrRight<A, B, E>(f: (a: A | B) => IO<E>) {
+export function doIfLeftOrRight<A, B, E>(f: (a: A | B) => IO<E>): (e: Either<A, B>) => Either<A, B> {
     return (e: Either<A, B>) => pipe(
         e,
         doIfRight(a => () => f(a)()),

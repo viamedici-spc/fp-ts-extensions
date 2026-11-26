@@ -4,16 +4,16 @@ import {pipe} from "fp-ts/function";
 import * as O from "fp-ts/Option";
 import {not} from "fp-ts/Predicate";
 import * as A from "fp-ts/Array";
-import {Eq} from "fp-ts/Eq";
+import type {Eq} from "fp-ts/Eq";
 import * as RM from "./ReadonlyMap";
 
-export const defaultIfEmpty = <T>(a: T[], defaultValue: T) => pipe(
+export const defaultIfEmpty = <T>(a: T[], defaultValue: T): T[] => pipe(
     a,
     O.fromPredicate(not(A.isEmpty)),
     O.getOrElse(() => A.of(defaultValue))
 )
 
-export const replace = <T>(eq: Eq<T>) => (oldValue: T, newValue: T) => (a: Array<T>) => pipe(
+export const replace = <T>(eq: Eq<T>) => (oldValue: T, newValue: T) => (a: Array<T>): O.Option<Array<T>> => pipe(
     a,
     A.findIndex(i => eq.equals(i, oldValue)),
     O.chain(index => pipe(
@@ -23,7 +23,7 @@ export const replace = <T>(eq: Eq<T>) => (oldValue: T, newValue: T) => (a: Array
     )
 )
 
-export const notNull = <T>(t: T[]) => pipe(t, O.fromNullable, O.getOrElse(() => new Array<T>()), A.map(O.fromNullable), A.compact);
+export const notNull = <T>(t: T[]): Array<NonNullable<T>> => pipe(t, O.fromNullable, O.getOrElse(() => new Array<T>()), A.map(O.fromNullable), A.compact);
 
 export function fullOuterJoin<A, B, K>(a: A[], aKey: (a: A) => K, b: B[], bKey: (b: B) => K, kEq: Eq<K>): { a: A | undefined, b: B | undefined }[] {
     type entry = { a: A[], b: B[] };
