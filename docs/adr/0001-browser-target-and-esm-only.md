@@ -31,8 +31,8 @@ their full path (`fp-ts/es6/Option.js`); the declarations keep `fp-ts/Option`.
 - A consumer's own `fp-ts/Option` and the package's `fp-ts/es6/Option.js` are the same file in a bundler, so there is
   one fp-ts instance.
 - Test runners that run in Node.js (Vitest) must let their bundler transform fp-ts and the SPC packages
-  (`server.deps.inline`, see the README); the alternative, inlining fp-ts into this package, was not chosen: fp-ts is
-  expected to leave the libraries, which removes the setting.
+  (`server.deps.inline`, see the README); the alternative, inlining fp-ts into this package, was not chosen: it would
+  duplicate fp-ts for every consumer that uses it directly.
 
 ## Alternatives considered
 
