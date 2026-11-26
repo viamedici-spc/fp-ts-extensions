@@ -3,7 +3,7 @@
   "configVersion": 0,
   "workspaces": {
     "": {
-      "name": "@viamedici/fp-ts-extensions",
+      "name": "@viamedici-spc/fp-ts-extensions",
       "devDependencies": {
         "@arethetypeswrong/cli": "^0.18.5",
         "@types/bun": "^1.4.5",
