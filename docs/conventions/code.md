@@ -54,6 +54,7 @@ runs the wrong runner.
 
 Every module mirrors an fp-ts module of the same name: it re-exports that module and adds its extensions,
 so `import {O} from "@viamedici-spc/fp-ts-extensions"` is a drop-in for fp-ts's `Option` plus more.
+
 ### TSDoc on the public API
 
 **Every public type, property, function, hook, component and method carries TSDoc.** Its readers are application
@@ -101,6 +102,7 @@ but not from their spirit: no history, no dates, no internals
 
 This library has no error type of its own: its functions return fp-ts values (`Option`, `Either`,
 `TaskEither`) and throw only where the name says so (`getOrThrow`).
+
 ## A union is consumed exhaustively, with `ts-pattern`
 
 Nothing about a union makes it safe on its own: a chain of `if`s over one still compiles the day a member is added, and
