@@ -7,8 +7,9 @@ status: accepted
 ## Purpose
 
 Extensions for fp-ts that the SPC client libraries share: helpers fp-ts does not offer (side effects on `Option`,
-`Either` and `TaskEither` values, `Eq` builders for nullable values, unions and unsorted arrays, a full outer join, number
-parsing into `Option`, type extractors) and the fp-ts modules themselves under the same names, so one import covers both.
+`Either` and `TaskEither` values, `Eq` builders for nullable values, unions and unsorted arrays, a full outer join,
+number parsing into `Option`, type extractors) and the fp-ts modules themselves under the same names, so one import
+covers both.
 
 Out of scope: an FP library of its own. Everything here builds on fp-ts 2.x and stays compatible with it.
 
@@ -30,10 +31,10 @@ Out of scope: an FP library of its own. Everything here builds on fp-ts 2.x and 
 
 One source file per fp-ts module in `src/`, `src/index.ts` as the aggregate entry. tsdown builds every file as its own
 ES module with its declaration file (from isolated declarations) and generates the `exports` map. Because fp-ts has no
-`exports` map, the JavaScript output imports fp-ts's ES modules by their full path (`fp-ts/es6/Option.js`); the reason is
-in [ADR 0001](adr/0001-browser-target-and-esm-only.md), the mechanism in `tsdown.config.ts`. Each module file also
-exports the namespace object the build creates for the entry point (such as `Option_exports`); it is not part of the
-API and has no declaration.
+`exports` map, the JavaScript output imports fp-ts's ES modules by their full path (`fp-ts/es6/Option.js`); the reason
+is in [ADR 0001](adr/0001-browser-target-and-esm-only.md), the mechanism in `tsdown.config.ts`. Each module file also
+exports the namespace object the build creates for the entry point (such as `Option_exports`); it is not part of the API
+and has no declaration.
 
 ## Supported environments
 

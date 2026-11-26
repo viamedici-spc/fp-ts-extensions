@@ -9,9 +9,10 @@ Date: 2026-11-26
 ## Context
 
 The package is consumed by the SPC client libraries, which run in browsers: through a bundler, or as a self-contained
-bundle loaded from a CDN. Server-side integrations use the configuration engine's REST API directly and do not need these
-libraries. The package used to ship ES modules and CommonJS side by side, without `"type": "module"`, to keep webpack 4
-and CommonJS consumers working; that made the ES build non-standard and kept consumers asking for plain Node.js support.
+bundle loaded from a CDN. Server-side integrations use the configuration engine's REST API directly and do not need
+these libraries. The package used to ship ES modules and CommonJS side by side, without `"type": "module"`, to keep
+webpack 4 and CommonJS consumers working; that made the ES build non-standard and kept consumers asking for plain
+Node.js support.
 
 fp-ts 2.x has no `exports` map. Strict ESM resolution, as webpack 5 applies it to a `"type": "module"` package, rejects
 an extensionless subpath such as `fp-ts/Option` and needs the full file path.
@@ -19,14 +20,14 @@ an extensionless subpath such as `fp-ts/Option` and needs the full file path.
 ## Decision
 
 The package is ESM only (`"type": "module"`, `exports` with ES modules and their declarations) and supports browsers
-through a bundler or a CDN bundle. Node.js is not a supported runtime. The JavaScript output imports fp-ts's ES modules by
-their full path (`fp-ts/es6/Option.js`); the declarations keep `fp-ts/Option`.
+through a bundler or a CDN bundle. Node.js is not a supported runtime. The JavaScript output imports fp-ts's ES modules
+by their full path (`fp-ts/es6/Option.js`); the declarations keep `fp-ts/Option`.
 
 ## Consequences
 
 - No CommonJS build: `require` of the package is not supported, nor are bundlers without ES module support.
-- Importing the package in plain Node.js fails at fp-ts's ES files, which Node.js does not treat as ES modules. Tests run
-  in Bun, whose resolver handles them.
+- Importing the package in plain Node.js fails at fp-ts's ES files, which Node.js does not treat as ES modules. Tests
+  run in Bun, whose resolver handles them.
 - webpack 5, Vite, Rollup and esbuild resolve the output without configuration.
 - A consumer's own `fp-ts/Option` and the package's `fp-ts/es6/Option.js` are the same file in a bundler, so there is
   one fp-ts instance.

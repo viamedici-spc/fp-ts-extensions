@@ -19,7 +19,8 @@ drift, and the published package mixed formats.
   `.oxfmtrc.json`) and the test runner (`bun test` with the `bun:test` API).
 - **oxlint** lints, until Bun ships a linter of its own.
 - **tsdown** builds the package: ES modules and the generated `exports` map. The declarations come from Oxc's isolated
-  declarations, one file per module (no TypeScript compiler needed). publint and arethetypeswrong check the packed result.
+  declarations, one file per module (no TypeScript compiler needed). publint and arethetypeswrong check the packed
+  result.
 - **`bun run verify`** is the one gate, locally and in CI; its independent steps run in parallel
   (`bun run --parallel`).
 - **Publishing** goes through the shared CI workflow: Bun packs the tarball, `npm publish` uploads it with npm trusted

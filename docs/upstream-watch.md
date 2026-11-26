@@ -7,8 +7,8 @@ status: living
 Things we would do differently if a dependency or a tool allowed it, each with the one command that says whether it does
 yet.
 
-⚠️ **Nobody polls this file.** It is read when somebody upgrades the dependency in question. An entry is owed by somebody
-else, so it can be neither decided nor planned.
+⚠️ **Nobody polls this file.** It is read when somebody upgrades the dependency in question. An entry is owed by
+somebody else, so it can be neither decided nor planned.
 
 ## fp-ts
 
