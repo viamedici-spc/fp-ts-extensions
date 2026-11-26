@@ -37,6 +37,7 @@ drift, and the published package mixed formats.
 ## Alternatives considered
 
 - **npm and Vite as before:** the install breakage and the format mix came from there.
-- **Declarations from the TypeScript compiler:** slower, needs the `typescript` package, and lets inferred types leak
-  into the public declarations unnoticed.
+- **Declarations from the TypeScript compiler:** slower and needs the `typescript` package; and tsdown's bundled
+  declarations drop what a module passes on with `export *` once the module is re-exported as a namespace
+  (rolldown-plugin-dts#300, see the upstream watch).
 - **Vitest for tests:** the tests need no DOM, and `bun test` runs them without another tool.
