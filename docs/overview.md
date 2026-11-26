@@ -17,6 +17,10 @@ Out of scope: an FP library of its own. Everything here builds on fp-ts 2.x and 
 
 - The entry point `@viamedici-spc/fp-ts-extensions` exports one namespace per module under the usual fp-ts aliases (`O`,
   `E`, `TE`, `RA`, `RM`, `Eq`, …) and re-exports `fp-ts/function` (`pipe`, `flow`, …).
+- The entry point also exports, flat: `none`, `some`, `isNone`, `isSome` (Option); `left`, `right`, `isLeft`, `isRight`
+  (Either); `not`, `and`, `or` (Predicate); and the types `Option`, `Either`, `Predicate`, `TaskEither`, `Task`,
+  `TaskOption`, `Magma`, `Monoid`, `ReadonlyNonEmptyArray`, `NonEmptyArray`, `OrdT` and `EqT`, the last two being
+  fp-ts's `Ord` and `Eq` under other names.
 - Every module is also a subpath: `@viamedici-spc/fp-ts-extensions/Option`, `/ReadonlyArray`, `/function`, … The files
   are `src/<Module>.ts`; each one starts with `export * from "fp-ts/<Module>"` and adds its extensions below.
 
