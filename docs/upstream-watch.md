@@ -69,13 +69,14 @@ else, so it can be neither decided nor planned.
 - **What blocks it:** tsdown's declaration bundling (rolldown-plugin-dts) drops what a module re-exports with
   `export * from "fp-ts/…"` once that module is re-exported as a namespace (`export * as O from "./Option"`), so
   `O.isSome` is missing from the declarations while the JavaScript has it.
-- **Check** (after switching `tsdown.config.ts` back to `dts: {generator: "oxc"}` and building, a count above 0 means
-  the namespace carries fp-ts's exports again):
+- **Check** (in a scratch copy of the repository: switch `tsdown.config.ts` to `dts: {generator: "oxc"}` without the
+  `isolatedDeclarations` plugin, build, and run the consumer type check; exit code 0 means it is fixed):
 
   ```bash
-  bun run build && grep -c "isSome" dist/Option.d.ts
+  bun run build && bun package-check/consumer.ts
   ```
 
 - **What it would buy:** the plugin in `tsdown.config.ts` and the explicit `rolldown` dev dependency go away.
-- **Upstream:** not reported.
-- **Last checked:** tsdown 0.23.7, 2026-11-26: the fp-ts exports are missing.
+- **Upstream:** https://github.com/sxzz/rolldown-plugin-dts/issues/300
+- **Last checked:** tsdown 0.23.7, 2026-11-26: the consumer type check fails with TS2694 and TS2314 in
+  `dist/index.d.ts`; the issue is open.
