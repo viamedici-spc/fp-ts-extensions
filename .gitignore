@@ -4,3 +4,4 @@ node_modules
 test-results
 /**/build
 /report/
+/package-check/consumer/index.ts

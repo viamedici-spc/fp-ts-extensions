@@ -16,5 +16,5 @@
       }
     ]
   },
-  "ignorePatterns": ["dist/**"]
+  "ignorePatterns": ["dist/**", "package-check/consumer/index.ts"]
 }

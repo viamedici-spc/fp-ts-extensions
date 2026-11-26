@@ -6,8 +6,9 @@ is the functional base of the SPC client libraries. Start with [docs/overview.md
 ## Commands
 
 - `bun install` — install (Bun is the package manager; never npm, so no `package-lock.json`).
-- `bun run verify` — the gate before a change counts as done: `bun check` (sources and tests), oxlint, `bun fmt --check`,
-  `bun test`, the tsdown build, publint and arethetypeswrong.
+- `bun run verify` — the gate before a change counts as done: `bun check` (sources, tests and `package-check/`), oxlint,
+  `bun fmt --check`, `bun test`, the tsdown build (which must leave `package.json` unchanged), the consumer type check
+  (`package-check/consumer.ts`), publint and arethetypeswrong.
 - `bun run build`, `bun run test`, `bun run lint`, `bun fmt` — the single steps.
 - Dependencies are updated by hand when working on the library: `bun outdated`, then `bun audit`. `bunfig.toml` installs
   only versions that have been public for three days.
