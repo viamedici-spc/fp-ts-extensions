@@ -1,3 +1,7 @@
+---
+status: accepted
+---
+
 # Changelog Convention
 
 This convention defines changelog creation for the **fp-ts-extensions** library (a JavaScript/TypeScript package).
