@@ -1,5 +1,5 @@
 import {O, some} from "../src";
-import {describe, it, expect} from "vitest";
+import {describe, it, expect} from "bun:test";
 
 describe("Option extension tests", () => {
     it("run - without parameters", () => {

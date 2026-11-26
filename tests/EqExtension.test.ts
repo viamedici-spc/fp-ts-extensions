@@ -1,6 +1,6 @@
 import {eqNullable} from "../src/Eq";
 import * as Eq from "../src/Eq";
-import {describe, it, expect} from "vitest";
+import {describe, it, expect} from "bun:test";
 
 describe("Eq extension tests", () => {
     it("eqNullable - both are null", () => {
