@@ -31,6 +31,24 @@ const firstEven = pipe(
 The package is **ESM only** and made for **browsers**, through a bundler (Vite, webpack 5, Rollup, esbuild, …) or as part
 of a bundle loaded from a CDN. Node.js is not a supported runtime.
 
+## Testing with Vitest
+
+fp-ts 2.x ships ES modules whose imports have no file extensions, which Node.js cannot load. Test runners that run in
+Node.js, such as Vitest, therefore have to let their bundler transform fp-ts and the SPC packages:
+
+```ts
+// vitest.config.ts
+import {defineConfig} from "vitest/config";
+
+export default defineConfig({
+    test: {
+        server: {deps: {inline: [/fp-ts/, /@viamedici-spc\//]}},
+    },
+});
+```
+
+`bun test` and the bundlers (Vite, webpack 5, Rollup, esbuild) need no such setting.
+
 ## Documentation
 
 - [Overview](docs/overview.md): modules, invariants, architecture and commands.
