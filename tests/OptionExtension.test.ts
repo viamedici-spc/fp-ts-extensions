@@ -1,5 +1,5 @@
 import {O, some} from "../src";
-import {describe, it, expect} from "vitest";
+import {describe, it, expect} from "bun:test";
 
 describe("Option extension tests", () => {
     it("run - without parameters", () => {
@@ -22,7 +22,7 @@ describe("Option extension tests", () => {
         O.run(incOption)(1);
 
         expect(count).toBe(1);
-    })
+    });
 
     it("run - multiple parameter", () => {
         let str = "";

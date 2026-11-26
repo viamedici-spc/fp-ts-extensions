@@ -1,6 +1,4 @@
 /**/.idea
 node_modules
 /**/dist
-test-results
-/**/build
-/report/
+/package-check/consumer/index.ts

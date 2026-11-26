@@ -1,12 +1,17 @@
 name: Build and Publish
 
-on: [push, workflow_dispatch]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions: {}
 
 jobs:
   build-publish:
-    uses: viamedici-spc/github-ci/.github/workflows/build-npm.yml@v1
+    permissions:
+      contents: read
+      id-token: write
+    uses: viamedici-spc/github-ci/.github/workflows/build-bun.yml@v4
     with:
-      node-version: '18'
-      build-verbs: 'test,build'
-    secrets:
-      npm_token: ${{ secrets.NPM_TOKEN }}
+      publish-environment: npm

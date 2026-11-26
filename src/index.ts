@@ -30,15 +30,15 @@ export * as Str from "./string";
 export * as Num from "./number";
 
 export * from "./function";
-export {type Option, none, some, isNone, isSome} from "./Option"
-export {type Either, left, right, isLeft, isRight} from "./Either"
-export {type Predicate, not, and, or} from "./Predicate"
-export {type TaskEither} from "./TaskEither"
-export {type Task} from "./Task"
-export {type TaskOption} from "./TaskOption"
-export {type Magma} from "./Magma"
-export {type Ord as OrdT} from "./Ord"
-export {type Eq as EqT} from "./Eq"
-export {type ReadonlyNonEmptyArray} from "./ReadonlyNonEmptyArray"
-export {type NonEmptyArray} from "./NonEmptyArray"
-export {type Monoid} from "./Monoid"
+export {type Option, none, some, isNone, isSome} from "./Option";
+export {type Either, left, right, isLeft, isRight} from "./Either";
+export {type Predicate, not, and, or} from "./Predicate";
+export {type TaskEither} from "./TaskEither";
+export {type Task} from "./Task";
+export {type TaskOption} from "./TaskOption";
+export {type Magma} from "./Magma";
+export {type Ord as OrdT} from "./Ord";
+export {type Eq as EqT} from "./Eq";
+export {type ReadonlyNonEmptyArray} from "./ReadonlyNonEmptyArray";
+export {type NonEmptyArray} from "./NonEmptyArray";
+export {type Monoid} from "./Monoid";

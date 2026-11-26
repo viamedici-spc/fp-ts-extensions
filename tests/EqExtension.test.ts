@@ -1,10 +1,10 @@
 import {eqNullable} from "../src/Eq";
 import * as Eq from "../src/Eq";
-import {describe, it, expect} from "vitest";
+import {describe, it, expect} from "bun:test";
 
 describe("Eq extension tests", () => {
     it("eqNullable - both are null", () => {
-        const eq: Eq.Eq<any> = Eq.fromEquals((x, y) => {
+        const eq: Eq.Eq<any> = Eq.fromEquals((_x, _y) => {
             throw "Should not be called";
         });
 
@@ -12,7 +12,7 @@ describe("Eq extension tests", () => {
     });
 
     it("eqNullable - one is null", () => {
-        const eq: Eq.Eq<any> = Eq.fromEquals((x, y) => {
+        const eq: Eq.Eq<any> = Eq.fromEquals((_x, _y) => {
             throw "Should not be called";
         });
 
