@@ -1,0 +1,13 @@
+{
+  "printWidth": 120,
+  "tabWidth": 4,
+  "bracketSpacing": false,
+  "arrowParens": "avoid",
+  "ignorePatterns": ["**/*.md", "dist/**"],
+  "overrides": [
+    {
+      "files": ["*.json", "*.yml", "*.yaml"],
+      "options": {"tabWidth": 2}
+    }
+  ]
+}

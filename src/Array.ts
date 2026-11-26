@@ -18,7 +18,7 @@ export const replace = <T>(eq: Eq<T>) => (oldValue: T, newValue: T) => (a: Array
     A.findIndex(i => eq.equals(i, oldValue)),
     O.chain(index => pipe(
             a,
-            A.modifyAt(index, _ => newValue)
+            A.modifyAt(index, () => newValue)
         )
     )
 )

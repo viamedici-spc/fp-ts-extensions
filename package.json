@@ -2,15 +2,22 @@
   "name": "@viamedici-spc/fp-ts-extensions",
   "version": "0.0.0",
   "description": "Extensions for fp-ts",
+  "keywords": [
+    "extensions",
+    "fp-ts",
+    "viamedici"
+  ],
+  "license": "MIT",
+  "author": "Viamedici Software GmbH",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/viamedici-spc/fp-ts-extensions.git"
   },
-  "type": "module",
-  "sideEffects": false,
   "files": [
     "dist"
   ],
+  "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": "./dist/index.js",
     "./Array": "./dist/Array.js",
@@ -46,25 +53,20 @@
   },
   "scripts": {
     "build": "tsdown",
+    "lint": "oxlint --deny-warnings",
     "test": "bun test",
-    "verify": "bun check && bun check -p tests && bun run test && bun run build && bun run verify:package",
+    "verify": "bun check && bun check -p tests && bun run lint && bun fmt --check && bun run test && bun run build && bun run verify:package",
     "verify:package": "publint --strict && attw --pack . --profile esm-only --format table-flipped"
   },
-  "keywords": [
-    "viamedici",
-    "fp-ts",
-    "extensions"
-  ],
-  "author": "Viamedici Software GmbH",
-  "license": "MIT",
-  "packageManager": "bun@1.4.5",
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.5",
     "@types/bun": "^1.4.5",
+    "oxlint": "^1.94.0",
     "publint": "^0.3.25",
     "tsdown": "^0.23.7"
   },
   "peerDependencies": {
     "fp-ts": "2.*"
-  }
+  },
+  "packageManager": "bun@1.4.5"
 }

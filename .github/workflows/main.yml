@@ -6,7 +6,7 @@ jobs:
   build-publish:
     uses: viamedici-spc/github-ci/.github/workflows/build-npm.yml@v1
     with:
-      node-version: '18'
-      build-verbs: 'test,build'
+      node-version: "18"
+      build-verbs: "test,build"
     secrets:
       npm_token: ${{ secrets.NPM_TOKEN }}
