@@ -1,7 +1,7 @@
 # Repository guidelines
 
-fp-ts-extensions extends fp-ts: every module in `src/` re-exports the fp-ts module of the same name and adds helpers. It
-is the functional base of the SPC client libraries. Start with [docs/overview.md](docs/overview.md).
+fp-ts-extensions extends fp-ts: every module in `src/` re-exports the fp-ts module of the same name and adds helpers.
+Start with [docs/overview.md](docs/overview.md).
 
 ## Commands
 
@@ -46,7 +46,7 @@ before pushing. The full rule is in
 
 ## Supported environments
 
-- **Browsers only**, as **ESM only**: through a bundler, or inside the configurator-framer bundle from a CDN.
+- **Browsers only**, as **ESM only**: through a bundler, or inside a self-contained bundle loaded from a CDN.
 - **Not Node.js.** Node.js is not a supported runtime ([ADR 0001](docs/adr/0001-browser-target-and-esm-only.md)). No
   `node:*` imports, no `process` or `Buffer` in `src/`.
 - **SSR frameworks:** the library runs on the client only; a module's top level touches no browser global.

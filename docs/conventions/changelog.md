@@ -14,7 +14,7 @@ Notes:
 - Level 2 headings (`##`) are used for concrete items under each section (feature titles or grouped entries).
 - New Features use short paragraphs under `##` headings; Improvements, Changes, and Fixes are bullet lists under their
   `##` headings.
-- Target audience: developers who use these fp-ts extensions, mostly through the SPC client libraries. Avoid overly
+- Target audience: developers who use these fp-ts extensions, directly or through a library built on them. Avoid overly
   technical or internal-only details.
 
 Template:

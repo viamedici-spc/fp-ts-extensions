@@ -6,10 +6,9 @@ status: accepted
 
 ## Purpose
 
-Extensions for fp-ts that the SPC client libraries share: helpers fp-ts does not offer (side effects on `Option`,
-`Either` and `TaskEither` values, `Eq` builders for nullable values, unions and unsorted arrays, a full outer join,
-number parsing into `Option`, type extractors) and the fp-ts modules themselves under the same names, so one import
-covers both.
+Extensions for fp-ts: helpers fp-ts does not offer (side effects on `Option`, `Either` and `TaskEither` values, `Eq`
+builders for nullable values, unions and unsorted arrays, a full outer join, number parsing into `Option`, type
+extractors) and the fp-ts modules themselves under the same names, so one import covers both.
 
 Out of scope: an FP library of its own. Everything here builds on fp-ts 2.x and stays compatible with it.
 

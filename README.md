@@ -2,7 +2,6 @@
 
 Extensions for [fp-ts](https://gcanti.github.io/fp-ts/): every module re-exports the fp-ts module of the same name and
 adds helpers on top, so `import {O, pipe} from "@viamedici-spc/fp-ts-extensions"` gives you fp-ts's `Option` plus more.
-It is the functional base of the SPC client libraries (`@viamedici-spc/configurator-ts` and the libraries built on it).
 
 ## Installation
 
